@@ -3,11 +3,12 @@
 const Employee = require("../lib/Employee");
 
 test("Can instantiate Employee instance", () => {
-
+    const emp = new Employee();
+    expect(emp instanceof Employee).toEqual(true);
 });
 
 test("Can set name via constructor arguments", () => {
-
+    const name = emp.name
 });
 
 test("Can set id via constructor argument", () => {
