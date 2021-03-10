@@ -4,7 +4,7 @@
   "description": "A team profile generator which prompts the user for their information, creating an HTML page with the key information for each person.",
   "main": "script.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --verbose test/*"
   },
   "repository": {
     "type": "git",
@@ -19,6 +19,9 @@
   "homepage": "https://github.com/JD-Jaramillo/team-profile-generator#readme",
   "dependencies": {
     "inquirer": "^8.0.0",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
     "jest": "^26.6.3"
   }
 }
