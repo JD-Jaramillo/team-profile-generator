@@ -11,14 +11,14 @@ const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
+const Employee = require("./lib/Employee");
+const employeeAnswersArr = [];
 
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
 
-const questions =
-    console.log('Please build your team!', questions);
-[
+const questions = [
     {
         type: 'input',
         message: "What is the team manager's name?",
@@ -44,9 +44,12 @@ const questions =
         message: 'Which type of team member would you like to add?',
         name: 'teamMember',
         choices: [
-            'Engineer', 'Intern', "I don't want to add any more team members",
+            'Engineer', 'Intern', 'I don\'t want to add any more team members',
         ],
     },
+
+];
+const engQuestions = [
     {
         type: 'input',
         message: "What is your engineer's name?",
@@ -67,6 +70,10 @@ const questions =
         message: "What is your engineer's GitHub?",
         name: 'engineerGitHub',
     },
+]
+
+
+const internQuestions = [
     {
         type: 'input',
         message: "What is your intern's name?",
@@ -87,19 +94,47 @@ const questions =
         message: "What is your intern's school?",
         name: 'internSchool',
     },
+]
 
-];
+function engQuestionsFunc() {
+    inquirer
+        .prompt(engQuestions)
+        .then(answers => {
+            employeeAnswersArr.push(answers);
+        })
+
+}
+
+function internQuestionsFunc() {
+    inquirer
+        .prompt(internQuestions)
+        .then(answers => {
+            employeeAnswersArr.push(answers);
+        })
+
+}
+
 
 
 function init() {
     inquirer
         .prompt(questions)
         .then(answers => {
-            render(answers);
-            fs.writeFile(outputPath, render(answers), (err) => {
-                err ? console.log(err) : console.log('Your HTML has been generated!');
-            })
 
+            employeeAnswersArr.push(answers);
+            if (answers.teamMember === 'Engineer') {
+                console.log('answer was engineer');
+                engQuestionsFunc();
+            }
+            // render(employees);
+            // fs.writeFile(outputPath, render(answers), (err) => {
+            //     err ? console.log(err) : console.log('Your HTML has been generated!');
+            //     console.log(answers);
+            // })
+            if (answers.teamMember === 'Intern') {
+                console.log('answer was intern');
+                internQuestionsFunc();
+            }
         })
 }
 // Function call to initialize app
