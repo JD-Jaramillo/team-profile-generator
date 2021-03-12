@@ -12,11 +12,11 @@ A team profile generator which prompts the user for their information, creating 
 Created the prompts for the user to respond to and then create the HTML with, then created a function to initialize the app and grab the answers from the prompts to write the HTML. Another JS page created gets the licese information selected and also returns the Markdown with template literals. 
 
 
-![Watch the video](./video/How-to-generate-readme.gif)
-
 Link to Full walkthrough video with narration: 
+![Watch the video](./videos/walkthroughvideoofprofilegenerator.gif)
 
-![JohnDJaramillo-team-profiler Generator](./images/)
+
+![JohnDJaramillo-team-profile-generator](./images/rendered-html.png)
 
 ## Requirements
 
@@ -43,7 +43,7 @@ THEN I exit the application, and the HTML is generated
 
 There is no need to install anything, to view the team profile generator simply follow the link below. 
 
-See deployed site here: [Deployed site]() 
+See deployed site here: [Deployed site](https://jd-jaramillo.github.io/team-profile-generator/) 
 
 See repository here: [GitHub Repo](https://github.com/JD-Jaramillo/team-profile-generator)
 
