@@ -1,17 +1,18 @@
 // Starter file provided by Instructor (03/09/2021) AC
 
 const Manager = require("../lib/Manager");
-const Employee = require("../lib/Employee");
+
+const manager = new Manager('Mike', 12, 'mike@gmail.com', 56);
 
 test("Can set office number via constructor argument", () => {
-    const officeNum = new Manager(2);
-    expect(officeNum).toEqual(2);
+    // const manager = new Manager('Mike', 12, 'mike@gmail.com', 56);
+    expect(manager.officeNum).toEqual(56);
 });
 
 test('getRole() should return "Manager"', () => {
-    expect(getRole()).toEqual(Manager);
+    expect(manager.getRole()).toEqual("Manager");
 });
 
 test("Can get office number via getOffice()", () => {
-
+    expect(manager.getOfficeNum()).toEqual(56);
 });

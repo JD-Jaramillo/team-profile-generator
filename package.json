@@ -4,7 +4,8 @@
   "description": "A team profile generator which prompts the user for their information, creating an HTML page with the key information for each person.",
   "main": "script.js",
   "scripts": {
-    "test": "jest --verbose test/*"
+    "test": "jest --verbose test/*",
+    "start": "node index"
   },
   "repository": {
     "type": "git",
